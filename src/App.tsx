@@ -1,12 +1,14 @@
 import Header from "./components/Header";
+import ListadeRestaurantes from "./components/Cardapio";
 import { GlobalCss, Container } from "./styles";
 
 function App() {
   return (
     <>
       <GlobalCss />
-      <Container>
         <Header />
+      <Container>
+        <ListadeRestaurantes />
       </Container>
     </>
   );

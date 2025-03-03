@@ -15,13 +15,21 @@ export const GlobalCss = createGlobalStyle`
     }
 
     body {
+        margin: 0;  
+        padding: 0;
         background-color: ${cores.brancofundo};
         color: ${cores.rosa};
+        width: 100%;  
+        height: 100%;
     }
 `
 
 export const Container = styled.div`
-    max-width: 1366px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 80px;
+    height: 100%;
     width: 100%;
     margin: 0 auto;
 `
