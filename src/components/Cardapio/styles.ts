@@ -90,18 +90,6 @@ export const Descricao = styled.p`
     padding-bottom: 16px;
 `
 
-export const Botao = styled.button`
-    background-color: ${cores.rosa};
-    color: ${cores.rosaletras};
-    font-size: 14px;
-    font-weight: 700;
-    line-height: 16px;
-    border: none;
-    cursor: pointer;
-    text-align: center;
-    padding: 6px;
-`
-
 export const Nota = styled.span`
     height: 21px;
     padding-right: 8px;
