@@ -11,7 +11,8 @@ export const ButtonContainer = styled.button`
     border: none;
     cursor: pointer;
     text-align: center;
-    padding: 6px;
+    padding: 4px;
+    text-decoration: none;
 `
 
 export const ButtonLink = styled(Link)`
@@ -23,5 +24,6 @@ export const ButtonLink = styled(Link)`
     border: none;
     cursor: pointer;
     text-align: center;
-    padding: 6px;
+    padding: 4px;
+    text-decoration: none;
 `
