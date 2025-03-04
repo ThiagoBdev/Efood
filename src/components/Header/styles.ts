@@ -10,19 +10,15 @@ const Hero = styled.header`
     height: 384px;
     background-image: url(${fundo});
 
-    img{ 
-        position: absolute;
+    img{
+        margin-bottom: 140px;
         max-width: 125px;
-        top: 40px;
-        left: 621px;
+
     }
     
     h1{
-        position: absolute;
         max-width: 539px;
         height: 84px;
-        top: 236px;
-        left: 414px;
         font-size: 36px;
         text-align: center;
     }
