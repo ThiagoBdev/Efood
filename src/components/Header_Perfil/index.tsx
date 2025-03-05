@@ -1,7 +1,7 @@
 import logo from "../../assets/images/fundoheader.svg"
 import { Container, Imagem, LinkCarrinho, Paragrafo } from "./styles"
 
-const Header_Perfil = () => (
+const HeaderPerfil = () => (
     <Container>
         <Paragrafo>Restaurantes</Paragrafo>
         <Imagem src={logo} alt="" />
@@ -9,4 +9,4 @@ const Header_Perfil = () => (
     </Container>
 )
 
-export default Header_Perfil
+export default HeaderPerfil

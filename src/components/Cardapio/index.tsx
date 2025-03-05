@@ -65,7 +65,6 @@ const ListadeRestaurantes = () => (
                 <Button type="link" to="/Perfil" title="Clique para ver o cardapio">Saiba mais</Button>
             </S.Sub_Container>
         </S.Card>
-
         <S.Card>
             <S.Imagem style={{ backgroundImage: `url(${massa})` }}>
                 <S.MiniCard>Italiana</S.MiniCard>
@@ -84,7 +83,6 @@ const ListadeRestaurantes = () => (
                 <Button type="link" to="/Perfil" title="Clique para ver o cardapio">Saiba mais</Button>
             </S.Sub_Container>
         </S.Card>
-
         <S.Card>
             <S.Imagem style={{ backgroundImage: `url(${massa})` }}>
                 <S.MiniCard>Italiana</S.MiniCard>
@@ -103,7 +101,6 @@ const ListadeRestaurantes = () => (
                 <Button type="link" to="/Perfil" title="Clique para ver o cardapio">Saiba mais</Button>
             </S.Sub_Container>
         </S.Card>
-
         <S.Card>
             <S.Imagem style={{ backgroundImage: `url(${massa})` }}>
                 <S.MiniCard>Italiana</S.MiniCard>
