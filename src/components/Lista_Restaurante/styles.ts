@@ -19,10 +19,11 @@ export const Card = styled.div`
 `
 
 export const Imagem = styled.div`
-    position: relative;
-    max-width: 472px;
-    width: 100%; 
-    height: 217px;
+position: relative;
+max-width: 472px;
+width: 100%; 
+height: 217px;
+object-fit: cover;
 `
 
 export const Destaque = styled.span`
@@ -57,7 +58,8 @@ export const Sub_Container = styled.div`
     border-left: 1px solid ${cores.rosa};
     border-right: 1px solid ${cores.rosa};
     border-bottom: 1px solid ${cores.rosa};
-
+    max-height: 186px;
+    height: 100%;
     padding: 5px;
     padding-top: 8px;
 `
