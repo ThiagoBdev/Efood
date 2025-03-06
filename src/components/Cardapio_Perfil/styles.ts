@@ -31,6 +31,7 @@ export const Card = styled.div`
     width: 100%;
     max-height: 318px;
     height: 100%;
+    cursor: pointer;
 `
 export const Imagem = styled.img`
     object-fit: cover;
@@ -62,5 +63,95 @@ export const Botao = styled.button`
     font-size: 14px;
     font-weight: 700;
     line-height: 16px;
+    cursor: pointer;
+`
 
+export const Modal = styled.div`
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+    &.visivel{
+        display: flex;
+    }
+
+    .overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0, 0.8)};
+`
+
+export const ContainerModal = styled.div`
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1024px;
+    width: 100%;
+    max-height: 345px;
+    height: 100%;
+    background-color: ${cores.rosa};
+    color: ${cores.brancofundo};
+    z-index: 1;
+`
+export const Imagemfechar = styled.img`
+    position: absolute;
+    left: 1000px;
+    bottom: 320px;
+    cursor: pointer;
+`
+
+export const SubModal = styled.div`
+    display: flex;
+    max-width: 960px;
+    width: 100%;
+    max-height: 281px;
+    height: 100%;
+    background-color: ${cores.rosa};
+`
+
+export const ImagemComida = styled.img`
+    object-fit: cover;
+    max-width: 280px;
+    width: 100%;
+    max-height: 280px;
+    height: 100%;
+`
+
+export const Conteudo = styled.div`
+    margin-left: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+`
+
+export const TituloModal = styled.h1`
+    font-size: 18px;
+    font-weight: 900;
+    line-height: 100%;
+`
+export const DescricaoModal = styled.p`
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+`
+export const BotaoModal = styled.button`
+    max-width: 220px;
+    width: 100%;
+    max-height: 24px;
+    height: 24px;
+    font-size: 14px;
+    font-weight: 700;
+    border: none;
+    background-color: ${cores.rosaletras};
+    color: ${cores.rosa};
+    cursor: pointer;
 `
