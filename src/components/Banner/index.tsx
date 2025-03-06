@@ -1,10 +1,22 @@
+import { useRestaurante } from "../../Hooks"
 import { Categoria, Container, NomeLoja } from "./styles"
 
-const Banner = () => (
-    <Container>
-        <Categoria>Italiana</Categoria>
-        <NomeLoja>La Dolce Vita Trattoria</NomeLoja>
-    </Container>
-)
+
+const Banner = () => {
+    const restaurante = useRestaurante()
+
+    if (!restaurante) {
+        return <p>Carregando...</p>;
+    }
+
+    return (
+        <Container backgroundUrl={restaurante.capa}>
+            <Categoria>{restaurante.tipo}</Categoria>
+            <NomeLoja>{restaurante?.titulo}</NomeLoja>
+        </Container>
+    )
+}
+
+
 
 export default Banner

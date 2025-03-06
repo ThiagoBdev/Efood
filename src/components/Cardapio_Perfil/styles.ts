@@ -29,8 +29,16 @@ export const Card = styled.div`
     background-color: ${cores.rosa};
     max-width: 304px;
     width: 100%;
-    height: 318px;
-    `
+    max-height: 318px;
+    height: 100%;
+`
+export const Imagem = styled.img`
+    object-fit: cover;
+    max-width: 305px;
+    width: 100%;
+    max-height: 167px;
+    height: 100%;  
+`
     
 export const Titulo = styled.h1`
     color: ${cores.rosaletras};

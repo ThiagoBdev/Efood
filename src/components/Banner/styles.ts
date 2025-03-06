@@ -1,12 +1,14 @@
 import styled from "styled-components";
-import massa from "../../assets/images/massa2.png"
 import { cores } from "../../styles";
 
-export const Container = styled.div`
+
+
+
+export const Container = styled.div<{backgroundUrl: string}>`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${massa});
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${(props) => props.backgroundUrl});
     background-size: cover;
     background-repeat: no-repeat;
     width: 100%;

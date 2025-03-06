@@ -1,3 +1,13 @@
+
+export interface Cardapio {
+  foto: string
+  preco: number
+  id: number
+  nome: string
+  descricao: string
+  porcao: string
+}
+
 export interface Restaurantes {
     id: number
     titulo: string
@@ -6,6 +16,7 @@ export interface Restaurantes {
     avaliacao: number
     descricao: string
     capa: string
+    cardapio: Cardapio[]
 }
 
 export const buscarRestaurantes = async (): Promise<Restaurantes[]> => {
@@ -19,4 +30,4 @@ export const buscarRestaurantes = async (): Promise<Restaurantes[]> => {
       console.error(erro);
       return [];
     }
-  };
+};

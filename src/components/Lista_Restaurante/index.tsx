@@ -45,7 +45,7 @@ const ListadeRestaurantes = () => {
                                 </S.MiniDiv>
                             </S.MiniContainer>
                             <S.Descricao>{getdescricao(restaurante.descricao)}</S.Descricao>
-                            <Button type="link" to="/Perfil" title="Clique para ver o cardápio">
+                            <Button type="link" to={`/perfil/${restaurante.id}`}title="Clique para ver o cardápio">
                                 Saiba mais
                             </Button>
                         </S.Sub_Container>
