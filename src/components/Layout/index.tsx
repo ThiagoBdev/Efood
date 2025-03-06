@@ -13,11 +13,13 @@ type LayoutProps = {
 
 const Layout = ({children, componenteheader, incluibanner}: LayoutProps) => {
     return (
-        <>
-            {componenteheader || < Header />}
-            {incluibanner && <Banner />}
-            <Container>{children}</Container>
-            <Footer />
+        <>  
+            <Container>
+                {componenteheader || < Header />}
+                {incluibanner && <Banner />}
+                {children}
+                <Footer />
+            </Container>
         </>
     )
 }

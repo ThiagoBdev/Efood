@@ -27,9 +27,10 @@ export const GlobalCss = createGlobalStyle`
 
 export const Container = styled.div`
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-top: 80px;
+    max-width: 1366px;
     height: 100%;
     width: 100%;
     margin: 0 auto;

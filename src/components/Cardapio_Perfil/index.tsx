@@ -1,4 +1,4 @@
-import { Card, Container, Paragrafo, Subcontainer, Titulo, Botao, Imagem, Modal, ContainerModal, SubModal, Imagemfechar, ImagemComida, Conteudo, TituloModal, DescricaoModal, BotaoModal } from "./styles"
+import * as S  from "./styles"
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { buscarRestaurantes, Restaurantes } from "../../api/restaurantes";
@@ -37,41 +37,41 @@ const ListagemCardapio = () => {
     return (
         <>
         
-        <Container>
+        <S.Container>
             {restaurante.cardapio && restaurante.cardapio.length > 0 ? (
                 restaurante.cardapio.map((item) => (
-                    <Subcontainer key={item.id}>
-                        <Card onClick={() => {setItemselecionado(item); setModalEstaAberta(true)}}>
-                            <Imagem src={item.foto} alt={item.nome} />
-                            <Titulo>{item.nome}</Titulo>
-                            <Paragrafo>{getdescricao(item.descricao)}</Paragrafo>
-                            <Botao>Adicionar ao carrinho</Botao>
-                        </Card>
-                    </Subcontainer>
+                    <S.Subcontainer key={item.id}>
+                        <S.Card onClick={() => {setItemselecionado(item); setModalEstaAberta(true)}}>
+                            <S.Imagem src={item.foto} alt={item.nome} />
+                            <S.Titulo>{item.nome}</S.Titulo>
+                            <S.Paragrafo>{getdescricao(item.descricao)}</S.Paragrafo>
+                            <S.Botao>Adicionar ao carrinho</S.Botao>
+                        </S.Card>
+                    </S.Subcontainer>
                 ))
             ) : (
                 <p>Esse restaurante ainda não tem cardápio disponível</p>
             )}
-        </Container>
-        <Modal className={modalEstaAberta ? "visivel" : ""}>
-            <ContainerModal>
-                <Imagemfechar src={fechar} alt="fechar" onClick={() => setModalEstaAberta(false)}/>
-                <SubModal>
+        </S.Container>
+        <S.Modal className={modalEstaAberta ? "visivel" : ""}>
+            <S.ContainerModal>
+                <S.Imagemfechar src={fechar} alt="fechar" onClick={() => setModalEstaAberta(false)}/>
+                <S.SubModal>
                     {itemselecionado&& (
                         <>
-                            <ImagemComida src={itemselecionado.foto} alt="Imagemcomida" />
-                            <Conteudo>
-                                <TituloModal>{itemselecionado.nome}</TituloModal>
-                                <DescricaoModal>{itemselecionado.descricao}</DescricaoModal>
-                                <DescricaoModal>Serve: de {itemselecionado.porcao}</DescricaoModal>
-                                <BotaoModal>Adicionar ao carrinho - R${itemselecionado.preco}</BotaoModal>
-                            </Conteudo>
+                            <S.ImagemComida src={itemselecionado.foto} alt="Imagemcomida" />
+                            <S.Conteudo>
+                                <S.TituloModal>{itemselecionado.nome}</S.TituloModal>
+                                <S.DescricaoModal>{itemselecionado.descricao}</S.DescricaoModal>
+                                <S.DescricaoModal>Serve: de {itemselecionado.porcao}</S.DescricaoModal>
+                                <S.BotaoModal>Adicionar ao carrinho - R${itemselecionado.preco}</S.BotaoModal>
+                            </S.Conteudo>
                         </>
                     )}
-                </SubModal>
-            </ContainerModal>
+                </S.SubModal>
+            </S.ContainerModal>
             <div className="overlay" ></div>
-        </Modal>
+        </S.Modal>
         </>
     );
 }

@@ -7,6 +7,8 @@ const Hero = styled.header`
     justify-content: center;
     flex-direction: column;
     position: relative;
+    width: 100%;
+    max-height: 384px;
     height: 384px;
     background-image: url(${fundo});
 

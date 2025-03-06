@@ -10,6 +10,7 @@ export const Container = styled.div`
     max-width: 1024px;
     width: 100%;
     height: 1290px;
+    padding-top: 80px;
 `
 
 export const Card = styled.div`

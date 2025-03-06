@@ -9,6 +9,7 @@ export const Container = styled.div`
     gap: 20px;
     max-width: 1024px;
     width: 100%;
+    padding-top: 56px;
 `
 
 export const Subcontainer = styled.div`
