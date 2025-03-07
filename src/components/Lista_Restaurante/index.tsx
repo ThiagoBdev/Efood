@@ -1,21 +1,12 @@
 import * as S from "./styles"
 import estrela from "../../assets/images/estrelaAmarela.png"
 import Button from "../Button"
-import { useEffect, useState } from "react"
-import { buscarRestaurantes, Restaurantes } from "../../api/restaurantes"
+import { useGetRestaurantesQuery } from "../../services"
 
 
 const ListadeRestaurantes = () => {
 
-    const [restaurantes, setRestaurantes] = useState<Restaurantes[]>([])
-
-    useEffect(() => {
-        const carregarDados = async () => {
-            const dados = await buscarRestaurantes()
-            setRestaurantes(dados)
-        }
-        carregarDados()
-    }, [])
+    const { data: restaurantes, isLoading } = useGetRestaurantesQuery()
 
     const getdescricao = (descricao: string) => {
         if (descricao.length > 95) {
@@ -24,6 +15,18 @@ const ListadeRestaurantes = () => {
         return descricao
     }
 
+    if (isLoading) {
+        return <p>Carregando...</p>;
+    }
+
+    if (!restaurantes) {
+        return <p>Restaurantes não encontrados.</p>;
+    }
+
+    if (!restaurantes || restaurantes.length === 0) {
+        return <p>Restaurantes não encontrados.</p>;
+    }
+    
 
     return (
         <>
@@ -54,7 +57,6 @@ const ListadeRestaurantes = () => {
             </S.Container>
         </>
     )
-
 }
 
 

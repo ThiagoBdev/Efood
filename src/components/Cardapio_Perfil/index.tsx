@@ -1,31 +1,24 @@
 import * as S  from "./styles"
 import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
-import { buscarRestaurantes, Restaurantes } from "../../api/restaurantes";
+import { useState } from "react";
 import fechar from "../../assets/images/fechar.png"
+import { useGetRestaurantePorIdQuery } from "../../services";
 
 const ListagemCardapio = () => {
 
     const { id } = useParams<{id: string}>();
-    const [restaurante, setRestaurante] = useState<Restaurantes | null>(null)
+    const { data: restaurante, isLoading} = useGetRestaurantePorIdQuery(id!)
     const [modalEstaAberta, setModalEstaAberta] = useState(false)
     const [itemselecionado, setItemselecionado] = useState<any>(null);
-    useEffect(() => {
-        if (id) {
-        const carregarRestaurante = async () => {
-            const restaurantes = await buscarRestaurantes(); 
-            const restauranteEncontrado = restaurantes.find(
-            (rest) => rest.id.toString() === id 
-            );
-            setRestaurante(restauranteEncontrado || null); 
-        };
-            carregarRestaurante(); 
-        }
-    }, [id])
 
-    if(!restaurante) {
-        return <div>Carregando...</div>
+    if (isLoading) {
+        return <div>Carregando...</div>;
     }
+
+    if (!restaurante) {
+        return <div>Restaurante não encontrado</div>;
+    }
+
 
     const getdescricao = (descricao: string) => {
         if (descricao.length > 95) {
