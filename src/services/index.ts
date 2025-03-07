@@ -10,6 +10,7 @@ export interface Cardapio {
 }
 
 export interface Restaurantes {
+    foto: string 
     id: number
     titulo: string
     destacado: boolean

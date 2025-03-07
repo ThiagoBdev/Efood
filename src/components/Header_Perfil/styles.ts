@@ -23,11 +23,12 @@ export const Imagem = styled.img`
     margin-left: 100px;
 `
 
-export const LinkCarrinho = styled.a`
+export const CartButton = styled.a`
     color: ${cores.rosa};
     font-weight: 900;
     font-size: 18px;
     line-height: 21px;
     align: center;
     text-decoration: none;
+    cursor: pointer;
 `

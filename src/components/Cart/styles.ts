@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import { cores } from "../../styles"
+import remover from "../../assets/images/iconeLixeira.png"
 
 export const Overlay = styled.div`
     position: absolute;
@@ -17,8 +18,11 @@ export const CartContainer = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
-    display: flex;
+    display: none;
     justify-content: flex-end;
+    &.is-open{
+        display: flex;
+    }
 `
 
 export const Sidebar = styled.aside`
@@ -58,14 +62,15 @@ export const ImagemComida = styled.img`
     max-width: 80px;
     max-height: 80px;
 `
-export const ImagemIcone = styled.img`
-    max-width: 16px;
-    max-height: 16px;
+export const IconeRemover = styled.button`
+    background-color: transparent;
+    background-image: url(${remover});
+    width: 16px;
+    height: 16px;
     margin-top: 20px;
     margin-left: 230px;
-    width: 100%;
-    height: 100%:
     cursor: pointer;
+    border: none;
 `
 
 export const infos = styled.div`
