@@ -1,7 +1,7 @@
 import * as S from "./styles"
 import { RootReducer } from "../../store"
 import { useDispatch, useSelector } from "react-redux"
-import { close } from "../../store/reducers/cart"
+import { close, remove } from "../../store/reducers/cart"
 import { useGetRestaurantePorIdQuery } from "../../services"
 import { useParams } from "react-router-dom"
 
@@ -23,6 +23,10 @@ const Cart = () => {
         return <div>Restaurante não encontrado</div>
     }
 
+    const removeItem = (id:number) => {
+        dispatch(remove(id))
+    }
+
     return (
         <S.CartContainer className={isOpen ? "is-open" : ""}>
             <S.Overlay onClick={CloseCart} />
@@ -36,7 +40,7 @@ const Cart = () => {
                                     <S.infos>
                                         <S.Titulo>{item.nome}</S.Titulo>
                                         <S.Preco>R${item.preco.toFixed(2)}</S.Preco>
-                                        <S.IconeRemover type="submit" />
+                                        <S.IconeRemover onClick={() => removeItem(item.id)} type="submit" />
                                     </S.infos>
                                 </S.SubContainer>
                             </S.ContainerItem>
