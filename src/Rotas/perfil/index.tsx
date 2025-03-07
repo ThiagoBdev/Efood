@@ -7,7 +7,7 @@ export const PerfilRota = (
     <Route 
         path="/perfil/:id" 
         element={
-            <Layout incluibanner={true} componenteheader={<HeaderPerfil />}>
+            <Layout incluibanner={true} componenteheader={<HeaderPerfil />} incluicart={true}>
                 <ListagemCardapio />
             </Layout>
         } 
