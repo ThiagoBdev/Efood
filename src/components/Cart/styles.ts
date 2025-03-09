@@ -77,7 +77,7 @@ export const infos = styled.div`
     margin-left: 8px;
 `
 
-export const Titulo = styled.h3`
+export const Titulo = styled.h1`
     color: ${cores.rosa};
     font-size: 18px;
     font-weight: 900;
@@ -128,4 +128,88 @@ export const Botao = styled.button`
     max-height: 24px;
     height: 100%;
     cursor: pointer;
+    
+`
+
+export const Wrapper = styled.div`
+    display: block;
+    align-items: center;
+    max-width: 345px;
+    width: 100%;
+    max-height: 400px;
+    height: 100%;
+    margin-top: 16px;
+    margin-left: 8px;
+    color: ${cores.rosaletras};
+
+    #cvv-payment{
+        width: 87px;
+    }
+
+    #paragrafo-payment{
+        margin-bottom: 16px;
+    }
+
+    #btn-next{
+        margin-top: 32px;    
+    }
+
+    #titulo-entrega{ 
+        margin-bottom: 16px;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 100%;
+        color: ${cores.rosaletras};
+    }
+
+    #titulo-confirmacao{
+        color: ${cores.rosaletras};
+    }
+
+    ${Botao} {
+        margin: 0 auto;
+        margin-top: 8px;
+        height: 24px;
+    }
+`
+
+export const Forms = styled.form`
+    
+`
+
+export const InputGroup = styled.div`
+    display: block;
+    margin-top: 8px;
+    width: 100%;
+    
+
+    input{
+        background-color: ${cores.rosaletras};
+        border: none;
+        width: 100%;
+        height: 32px;
+    }
+    
+    label{
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 100%;
+    }
+`
+
+export const Row = styled.div`
+    display: flex;
+    width: 100%;
+    gap: 30px;
+`
+
+export const miniWrapper = styled.div`
+    max-height: 250px;
+    height: 100%;
+
+    .space{ 
+        margin-bottom: 30px;
+    }
 `
