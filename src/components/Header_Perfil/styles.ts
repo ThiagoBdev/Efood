@@ -12,6 +12,14 @@ export const Container = styled.header`
     
 `
 
+export const MiniDiv = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    max-width: 1200px;
+    width: 100%;
+`
+
 export const Paragrafo = styled.p`
     font-weight: 900;
     font-size: 18px;

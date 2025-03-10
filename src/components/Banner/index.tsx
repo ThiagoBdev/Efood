@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useGetRestaurantesQuery } from "../../services";
-import { Categoria, Container, NomeLoja } from "./styles";
+import { Categoria, Container, MiniDiv, NomeLoja } from "./styles";
 
 const Banner = () => {
     const { id } = useParams<{ id: string }>(); 
@@ -26,8 +26,10 @@ const Banner = () => {
 
     return (
         <Container backgroundUrl={restaurante.capa}>
-            <Categoria>{restaurante.tipo}</Categoria>
-            <NomeLoja>{restaurante?.titulo}</NomeLoja>
+            <MiniDiv>
+                <Categoria>{restaurante.tipo}</Categoria>
+                <NomeLoja>{restaurante?.titulo}</NomeLoja>
+            </MiniDiv>
         </Container>
     );
 };

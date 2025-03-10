@@ -31,7 +31,6 @@ export const Container = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    max-width: 1366px;
     height: 100%;
     width: 100%;
     margin: 0 auto;

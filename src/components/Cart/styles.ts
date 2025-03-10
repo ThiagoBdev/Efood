@@ -173,9 +173,7 @@ export const Wrapper = styled.div`
     }
 `
 
-export const Forms = styled.form`
-    
-`
+
 
 export const InputGroup = styled.div`
     display: block;
