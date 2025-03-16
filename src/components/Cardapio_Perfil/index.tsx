@@ -15,8 +15,8 @@ const ListagemCardapio = () => {
 
     const addToCart = () => {
         if (itemSelecionado) {
-            dispatch(add(itemSelecionado)) // Adiciona apenas o item selecionado
-            dispatch(open()) // Abre o carrinho
+            dispatch(add(itemSelecionado))
+            dispatch(open())
         }
     }
 
@@ -50,7 +50,10 @@ const ListagemCardapio = () => {
                                         <S.TituloModal>{itemSelecionado.nome}</S.TituloModal>
                                         <S.DescricaoModal>{itemSelecionado.descricao}</S.DescricaoModal>
                                         <S.DescricaoModal>Serve: {itemSelecionado.porcao}</S.DescricaoModal>
-                                        <S.BotaoModal onClick={addToCart}>Adicionar ao carrinho - R${itemSelecionado.preco}</S.BotaoModal>
+                                        <S.BotaoModal onClick={() => { setModalEstaAberta(false); addToCart(); }}>
+                                            Adicionar ao carrinho - R${itemSelecionado.preco}
+                                        </S.BotaoModal>
+
                                     </S.Conteudo>
                                 </>
                             )}

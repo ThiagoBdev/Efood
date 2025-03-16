@@ -14,7 +14,10 @@ const Cart = () => {
     const { isOpen, items } = useSelector((state: RootReducer) => state.cart)
     const dispatch = useDispatch()
     const [step, setStep] = useState("cart")
-    const [purchase, {  data }] = usePurchaseMutation()
+
+    const [purchase, { data }] = usePurchaseMutation();
+
+
 
     const form = useFormik({
         initialValues: {
@@ -66,12 +69,11 @@ const Cart = () => {
                             }
                         }
                     },
-                    products: [{
-                        id: 1,
-                        price: 20
-                    }]
+                    products: items.map((item) => ({
+                        id: item.id,
+                        price: item.preco
+                    }))
             })
-
         }
     })
 
@@ -84,6 +86,7 @@ const Cart = () => {
     const CloseCart = () => {
         dispatch(close())
     }
+
 
     if (isLoading) {
         return <p>Carregando...</p>
@@ -121,7 +124,7 @@ const Cart = () => {
                                                 <S.infos>
                                                     <S.Titulo>{item.nome}</S.Titulo>
                                                     <S.Preco>R${item.preco.toFixed(2)}</S.Preco>
-                                                    <S.IconeRemover onClick={() => removeItem(item.id)} type="button" /> {/*✔ Corrigido type="submit" para type="button" no S.IconeRemover (para evitar envio de formulário acidental).*/}
+                                                    <S.IconeRemover onClick={() => removeItem(item.id)} type="button" /> 
                                                 </S.infos>
                                             </S.SubContainer>
                                         </S.ContainerItem>
@@ -229,19 +232,17 @@ const Cart = () => {
                                     </S.InputGroup>
                                 </S.Row>
                                 <S.Botao id="btn-next" onClick={() =>{ setStep(stepsFlow.payment.next); form.handleSubmit()}} type="button">Finalizar o pagamento</S.Botao>
-
                                 <S.Botao onClick={() => setStep(stepsFlow.payment.prev)}>Voltar para a edição de Endereço</S.Botao>
                             </S.Wrapper>
                         </S.Sidebar>
                     </S.CartContainer>
                 )}
-
                 {step === "confirmation" && (
                     <S.CartContainer className={isOpen ? "is-open" : ""}>
                         <S.Overlay onClick={CloseCart} />
                         <S.Sidebar>
                             <S.Wrapper>
-                                <S.Titulo id="titulo-confirmacao">Pedido realizado - {data?.orderId}</S.Titulo>
+                                <S.Titulo id="titulo-confirmacao">Pedido realizado - { data ? data.orderId : "Carregando..." }</S.Titulo>
                                 <S.miniWrapper>
                                     <S.Paragrafo className="space">Estamos felizes em informar que seu pedido já está em processo de preparação e, em breve, será entregue no endereço fornecido.</S.Paragrafo>
                                     <S.Paragrafo className="space">Gostaríamos de ressaltar que nossos entregadores não estão autorizados a realizar cobranças extras. </S.Paragrafo>

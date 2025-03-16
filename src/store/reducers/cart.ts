@@ -10,7 +10,7 @@ type Item = {
 }
 
 type CartState = {
-    items: Item[] // Agora o carrinho aceita vários itens
+    items: Item[] 
     isOpen: boolean
 }
 
@@ -27,7 +27,9 @@ const cartSlice = createSlice({
             const itemExiste = state.items.find((item) => item.id === action.payload.id)
 
             if (!itemExiste) {
-                state.items.push(action.payload) // Agora ele adiciona ao invés de substituir
+                state.items.push(action.payload) 
+            } else {
+                alert ("O prato ja esta no carrinho")
             }
         },
         remove: (state, action: PayloadAction<number>) => {
