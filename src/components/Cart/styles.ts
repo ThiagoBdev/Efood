@@ -186,6 +186,10 @@ export const InputGroup = styled.div`
         border: none;
         width: 100%;
         height: 32px;
+
+        &.error {
+            border: 3px solid red;
+        }
     }
     
     label{
